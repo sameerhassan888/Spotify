@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>music_player</title>
+    <!-- CSS only -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!--Background-->
+<div class="contain d-grid" style="height: 100vh; place-items: center">
+    <!---mobileUI-Start-->
+    <div class="music" style="
+          border: solid 2px #ffffff5c; border-radius: 10px;
+          background: linear-gradient(160deg,#262f27,#262f27,#262f27ba,#00800080,#262f27e6,#00800091,#262f27);">
+        <!--MobileUI--Close-->
+        <!--dottestop--Start-->
+        <ul class="points" style="font-size: 20px; display: flex">
+            <li style="color: #ff0000"></li>
+            <li style="color: #ffff00"></li>
+            <li style="color: #00b600"></li>
+        </ul>
+        <!--dottestop--Close-->
+        <!--dottestop--Start-->
+        <div>
+            <img alt="logo" src="others/download-removebg-preview.png"
+                 style="height: 4vw; width: 15vw; padding-left: 15px"/>
+        </div>
+        <!--dottestop--Close-->
+        <hr style="color: #ffffff"/>
+        <!--menu--Start-->
+        <ul class="menu text-white list-unstyled">
+            <li>MENU</li>
+            <li>
+                <!--dropdown--Start-->
+                <i class="bi bi-house"></i><span style="margin-right: 6.1rem;">Songs Playlist</span><i
+                    class="bi bi-chevron-right">
+                <ol class="dropdown list-unstyled">
+                    <li class="songItem">
+                        <img alt="1" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="0" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="2" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="1" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="3" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="2" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="4" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="3" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="5" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="4" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="6" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="5" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="7" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="6" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="8" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="7" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="9" src="/covers/1.webp"/><span class="songName">Khariyat_Song--Arjit</span><i
+                            class="bi songItemPlay bi-play-circle-fill" id="8" title="Play"></i>
+                    </li>
+                    <li class="songItem">
+                        <img alt="10" src="/covers/1.webp"/><span
+                            class="songName">Khariyat_Song--Arjit</span><i class="bi songItemPlay bi-play-circle-fill"
+                                                                           id="9"
+                                                                           title="Play"></i>
+                    </li>
+                </ol>
+            </i>
+            </li>
+            <!--dropdown--close-->
+            <li>
+                <i class="bi bi-search"></i><a href="#"><span>Search</span></a>
+            </li>
+            <li>
+                <i class="bi bi-file-earmark"></i><a href="#"><span>Library</span></a>
+            </li>
+            <li>
+                <i class="bi bi-award"></i><a href="#"><span>Premium</span></a>
+            </li>
+            <li>
+                <i class="bi bi-gear"></i><a href="#"><span>Settings</span></a>
+            </li>
+        </ul>
+        <!--menu--Close-->
+        <hr style="color: #ffffff"/>
+        <!--Player--start-->
+        <div class="player m-auto text-center">
+            <img alt="songs" id="masterImg" src="covers/1.webp"
+                 style="height: 90px; width: 90px; border-radius: 2px"/><br/>
+            <div class="song-details text-center text-white" style="font-size: 12px; margin: 0">
+                <p class="name m-0 p-0" id="masterSongName">Adil ha Muskil.....</p>
+            </div>
+            <label style="width: 100%;">
+                <input id="myProgressBar" max="100" min="0" style="height: .1rem; width: 90%" type="range"
+                       value="0"/><br/>
+            </label>
+            <i class="bi bi-skip-backward-fill" id="previous" title="prev"></i><i class="bi bi-play-circle-fill"
+                                                                                  id="masterPlay" title="play"></i><i
+                class="bi bi-skip-forward-fill" id="next" title="next"></i>
+        </div>
+
+        <!--Player--Close-->
+        <hr style="color: #ffffff; margin: 5px 0 0 0"/>
+        <!--Creator--start-->
+        <div class="profile d-flex text-white" style="margin: 10px 0 0 10px">
+            <div class="img">
+                <img alt="img" src="others/sameer.jpg" style="
+                height: 50px;
+                width: 50px;
+                border-radius: 50px;
+                margin-right: 10px;
+              "/>
+            </div>
+            <div class="name d-flex" style="height: 65px; width: 100%; font-size: 15px">
+                <p class="pt-2">
+                    Sameer Hassan<span style="font-size: 12px"><br/>Creator</span>
+                </p>
+                <i class="bi bi-arrow-bar-down p-3"></i><i class="bi bi-box-arrow-in-right pt-3"
+                                                           style="padding-left: 20%; font-size: 25px"></i>
+            </div>
+        </div>
+        <!--Creator--Close-->
+    </div>
+</div>
+<!--Background--Close-->
+
+<style>
+    .points li,
+    .menu li {
+        padding-left: 15px;
+    }
+
+    .menu li {
+        padding-top: 10px;
+    }
+
+    .menu i {
+        font-size: 20px;
+        padding-right: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .menu a:hover {
+        color: #1ed760;
+        transition: all .5s ease;
+    }
+
+    .menu li {
+        position: relative;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .menu li:hover .dropdown {
+        display: block;
+        position: absolute;
+        margin: auto; padding-bottom: 10px;
+        overflow-y: scroll;
+        width: 92%; 
+        height: 260px;
+        left: 300px; top: 2px;
+        transition: all;
+        background: linear-gradient(160deg, #262f27, #262f27, #262f27ba, #00800080, #262f27e6, #00800091, #262f27);
+    }
+    .dropdown::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+
+    .dropdown::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .dropdown::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #1ED760;
+    }
+
+    .menu ol li {
+        color: white;
+    }
+
+    .menu ol li i:hover {
+        color: #00b600;
+        transition: all .5s ease;
+    }
+
+    .player i {
+        color: white;
+        font-size: 25px;
+        padding-right: 10px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .contain {
+        background-image: url("others/peakpx.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .menu ol img {
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+        border: solid 4px white;
+    }
+
+    .songName {
+        margin-left: 10px;
+        border: solid 2px #1ed760;
+        padding: 5px 20px 5px 20px;
+        border-radius: 50px;
+        font-size: 15px;
+    }
+
+    .menu ol i {
+        color: white;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+</style>
+
+<script>
+    let songIndex = 0;
+    let masterImg = document.querySelector('#masterImg')
+    let audioElement = new Audio("/songs/1.mp3");
+    let masterPlay = document.getElementById("masterPlay");
+    let myProgressBar = document.getElementById("myProgressBar");
+    let masterSongName = document.getElementById("masterSongName");
+    let songItems = Array.from(document.getElementsByClassName("songItem"));
+    let songs = [
+        {
+            songName: "Adil ha Muskil...",
+            filePath: "/songs/1.mp3",
+            coverPath: "/covers/1.webp",
+        },
+        {
+            songName: "Kalank Duet.......",
+            filePath: "/songs/2.mp3",
+            coverPath: "/covers/2.webp",
+        },
+        {
+            songName: "Kamaal Karte....",
+            filePath: "/songs/3.mp3",
+            coverPath: "/covers/3.webp",
+        },
+        {
+            songName: "Kaun Jujhe pyar",
+            filePath: "/songs/4.mp3",
+            coverPath: "/covers/4.webp",
+        },
+        {
+            songName: "Khariyat song....",
+            filePath: "/songs/5.mp3",
+            coverPath: "/covers/5.webp",
+        },
+        {
+            songName: "Kudh ko tere......",
+            filePath: "/songs/6.mp3",
+            coverPath: "/covers/6.webp",
+        },
+        {
+            songName: "Oh Hamsafar.....",
+            filePath: "/songs/7.mp3",
+            coverPath: "/covers/7.webp",
+        },
+        {
+            songName: "Phir bhi Tum ko",
+            filePath: "/songs/8.mp3",
+            coverPath: "/covers/8.webp",
+        },
+        {
+            songName: "Tum hi Aana......",
+            filePath: "/songs/9.mp3",
+            coverPath: "/covers/9.webp",
+        },
+        {
+            songName: "Tum hi ho song.",
+            filePath: "/songs/10.mp3",
+            coverPath: "/covers/10.webp",
+        },
+    ];
+    songItems.forEach((element, i) => {
+        element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+        element.getElementsByClassName("songName")[0].innerText =
+            songs[i].songName;
+    });
+
+    masterPlay.addEventListener("click", () => {
+        if (audioElement.paused || audioElement.currentTime <= 0) {
+            audioElement.play();
+            masterPlay.classList.replace(
+                "bi-play-circle-fill",
+                "bi-pause-circle-fill"
+            );
+        } else {
+            audioElement.pause();
+            masterPlay.classList.replace(
+                "bi-pause-circle-fill",
+                "bi-play-circle-fill"
+            );
+        }
+    });
+
+    audioElement.addEventListener("timeupdate", () => {
+        console.log("timeupdate");
+        let progress = parseInt(
+            (audioElement.currentTime / audioElement.duration) * 100
+        );
+        myProgressBar.value = progress;
+    });
+
+    myProgressBar.addEventListener("change", () => {
+        audioElement.currentTime =
+            (myProgressBar.value * audioElement.duration) / 100;
+    });
+
+    const makeAllPlays = () => {
+        Array.from(document.getElementsByClassName("songItemPlay")).forEach(
+            (element) => {
+                element.classList.replace(
+                    "bi-pause-circle-fill",
+                    "bi-play-circle-fill"
+                );
+            }
+        );
+    };
+
+    Array.from(document.getElementsByClassName("songItemPlay")).forEach(
+        (element) => {
+            element.addEventListener("click", (e) => {
+                makeAllPlays();
+                songIndex = parseInt(e.target.id);
+                e.target.classList.replace(
+                    "bi-play-circle-fill",
+                    "bi-pause-circle-fill"
+                );
+                masterImg.src = `covers/${songIndex + 1}.webp`;
+                audioElement.src = `songs/${songIndex + 1}.mp3`;
+                masterImg.innerText;
+                masterSongName.innerText = songs[songIndex].songName;
+                audioElement.currentTime = 0;
+                audioElement.play();
+                masterPlay.classList.replace(
+                    "bi-play-circle-fill",
+                    "bi-pause-circle-fill"
+                );
+            });
+        }
+    );
+
+    document.getElementById("next").addEventListener("click", () => {
+        if (songIndex >= 9) {
+            songIndex = 0;
+        } else {
+            songIndex += 1;
+        }
+        masterImg.src = `covers/${songIndex + 1}.webp`;
+        audioElement.src = `songs/${songIndex + 1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterPlay.classList.replace(
+            "bi-play-circle-fill",
+            "bi-pause-circle-fill"
+        );
+    });
+
+    document.getElementById("previous").addEventListener("click", () => {
+        if (songIndex < 0) {
+            songIndex = 0;
+        } else {
+            songIndex -= 1;
+        }
+        masterImg.src = `covers/${songIndex + 1}.webp`;
+        audioElement.src = `songs/${songIndex + 1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterPlay.classList.replace(
+            "bi-play-circle-fill",
+            "bi-pause-circle-fill"
+        );
+    });
+
+</script>
+
+<script></script>
+</body>
+
+</html>
